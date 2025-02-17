@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piyush Raj - Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 60%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .header {
+            text-align: center;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .contact-info {
+            font-size: 14px;
+            color: #555;
+        }
+        .section {
+            margin-top: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="images/1647871114996.jpeg" alt="Piyush Raj" class="profile-img">
+            <h1>Piyush Raj</h1>
+            <p class="contact-info">piyushraj.2243@gmail.com | 9304249973 | Bengaluru, Karnataka, India</p>
+            <p><a href="https://linkedin.com/in/piyush2243" target="_blank">LinkedIn Profile</a></p>
+        </div>
+        <div class="section">
+            <h2>Summary</h2>
+            <p>
+                Data-driven professional with <span id="experience-years"></span> years of experience in software development, analysis, reporting, and automation. 
+                Skilled in Python (NumPy, pandas), unittest, SQL, Power BI, and cloud technologies like Azure. 
+                Currently working as a Software Developer at Accenture, specializing in backend automation and data management.
+            </p>
+            <p>
+                Previously contributed to Google’s Trust and Safety team, optimizing search engine reporting and automating workflows. 
+                Migrated code from Google Apps Script to Python, enhancing efficiency. 
+                At BAMA Norway, developed a Computer Vision model for data extraction and verification, and created an Excel-based validation tool that reduced manual effort by 70%.
+            </p>
+        </div>
+        <div class="section">
+            <h2>Experience</h2>
+            <h3>Software Developer, Accenture</h3>
+            <p>March 2022 - Present</p>
+            <ul>
+                <li>Currently employed as Software Developer at Accenture</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Projects</h2>
+            <h3>Google (Role: Trust and Safety Software Developer)</h3>
+            <ul>
+                <li>Managed and organized software for a technology-based client, focusing on backend Python development for search engine reporting processes.</li>
+                <li>Developed automation code and unit tests to improve efficiency and verification by filtering out "GoBad" data from search engine users.</li>
+                <li>Maintained and optimized backend systems, retrieving and processing data from Google Docs and Sheets to support reporting and data management.</li>
+                <li>Led the migration of code from Google Apps Script to Python, ensuring a more robust and scalable system for automation and data extraction.</li>
+                <li>Collaborated with cross-functional teams to enhance workflow, optimizing the reporting process and ensuring better data integrity and accuracy.</li>
+            </ul>
+            <h3>BAMA Norway (Role: Data Analyst and Computer Vision Associate)</h3>
+            <ul>
+                <li>Led the creation of a Computer Vision model for a global client specializing in the import and wholesale distribution of fresh produce.</li>
+                <li>Developed a data extraction model from labels and built a data mapping model tailored to specific scenarios, ensuring efficient data organization.</li>
+                <li>Created an Excel-based verification model that streamlined data validation, reducing manual verification time by 70%.</li>
+                <li>Designed a logo extraction model to validate logos against label data, enhancing quality control and ensuring brand integrity.</li>
+                <li>Utilized PowerApps to develop an application that streamlined the project's functionality, collaborating with a team of two and leading development efforts.</li>
+            </ul>
+            <h3>Self-Initiated Power BI Project: Data Visualization</h3>
+            <ul>
+                <li>Developed a Power BI solution for visualizing company data.</li>
+                <li>Created a comprehensive visualization tool to display key insights and trends within the company’s data.</li>
+                <li>Utilized Power BI’s capabilities to generate interactive and dynamic reports, aiding in data-driven decision-making.</li>
+                <li>Independently drove the project from concept to implementation, showcasing initiative and technical expertise.</li>
+                <li>Demonstrated a strong interest in data analysis and visualization, highlighting valuable skills in Power BI.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Education</h2>
+            <p>Bachelor of Engineering, Electronics and Instrumentation <br> Bangalore Institute of Technology (CGPA: 6.99)</p>
+        </div>
+        <div class="section">
+            <h2>Skills</h2>
+            <ul>
+                <li>Python (Numpy, pandas), unittest, SQL</li>
+                <li>Google Apps Script, PowerApps</li>
+                <li>Excel, Google Sheets, Power BI</li>
+                <li>Google Sheets API, Google Docs API, Azure Blob Storage</li>
+                <li>Certifications: DP-900, AI-900</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function calculateExperience(startYear, startMonth) {
+            const startDate = new Date(startYear, startMonth - 1);
+            const currentDate = new Date();
+
+            let years = currentDate.getFullYear() - startDate.getFullYear();
+            let months = currentDate.getMonth() - startDate.getMonth();
+
+            if (months < 0) {
+                years--; // Reduce a year if the current month is before the start month
+                months += 12; // Convert negative months to positive
+            }
+
+            // Format the experience text
+            let experienceText = years > 0 ? `${years} years` : "";
+            experienceText += (years > 0 && months > 0) ? " and " : "";
+            experienceText += months > 0 ? `${months} months` : "";
+            
+            // Update the span with the calculated experience
+            document.getElementById("experience-years").textContent = experienceText;
+        }
+
+        calculateExperience(2022, 3);
+    </script>
+</body>
+</html>
